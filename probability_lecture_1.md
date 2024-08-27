@@ -350,9 +350,17 @@ Counting method apply in the situations in which we have probabilistic experimen
 }
 </style>
 
-<div class="square">
-    <div class="circle">Ω</div>
-</div>
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Yellow square with red border -->
+  <rect x="0" y="0" width="200" height="200" fill="yellow" stroke="red" stroke-width="4"/>
+  
+  <!-- Lemon green circle -->
+  <circle cx="100" cy="100" r="50" fill="#ADFF2F"/>
+  
+  <!-- Omega symbol -->
+  <text x="100" y="115" font-size="30" text-anchor="middle" fill="black" font-family="Arial">Ω</text>
+</svg>
 
 
 
