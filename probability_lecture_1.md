@@ -327,7 +327,7 @@ Counting method apply in the situations in which we have probabilistic experimen
 
 
 
-![Square with Circle](sqcircle.svg)
+![Square with Circle](figure/sqcircle.svg)
 
 
 
