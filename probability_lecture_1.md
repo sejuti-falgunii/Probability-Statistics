@@ -324,31 +324,7 @@ Here A & B both are independent and disjoint. But the info that C occurrs biases
 "Having independence in the original model doesn't imply independence in conditional model"
 # Lecture 4
 Counting method apply in the situations in which we have probabilistic experiments with a fintie number of outcomes- where every possible outcome of the same possibility of occurring.
-<style>
-.square {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
-  border: 2px solid red;
-}
-.circle {
-  width: 100px;
-  height: 100px;
-  background-color: white; /* Lemon green color */
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  .circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: black;
-}
-</style>
+
 
 
 <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
