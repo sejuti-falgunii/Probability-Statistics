@@ -637,14 +637,10 @@ Why? For each element, we have two choices: include it in a subset or not. So, w
   Similarly, \(\binom{n}{0} = 1\) because there’s exactly one way to choose zero items (the empty set).
 
 # Lecture 5
-
-In probability theory, we often start with the basics—just understanding probabilities and how they work. But if we only focused on probabilities alone, the subject wouldn't be as rich or engaging as it is. What truly adds depth and makes probability theory intriguing is the concept of **random variables**. Random variables allow us to assign numerical values to the outcomes of an experiment, giving us a more tangible way to analyze and understand randomness.
-
 ## Defining Random Variables
+Random variables allow us to assign numerical values to the outcomes of an experiment, giving us a more tangible way to analyze and understand randomness. An experiment where we measure the height of a randomly chosen student from a class,the sample space \( \Omega \), is the set of all students in the class. A RV in this case,\( H \) for height—maps each student (an outcome) to a specific numerical value (their height in inches).
 
-Let's define what we mean by a random variable. Imagine an experiment where we measure the height of a randomly chosen student from a class. Here, the sample space, denoted by \( \Omega \), is the set of all students in the class. A **random variable**—in this case, let's call it \( H \) for height—maps each student (an outcome) to a specific numerical value (their height in inches).
-
-So, mathematically speaking, a random variable is a function that assigns a real number to every possible outcome of an experiment. For example, if you select a random student and measure their height, you might get 60 inches or 71 inches, depending on the student chosen. Each of these numerical outcomes corresponds to a specific value of the random variable \( H \).
+A random variable is a function that assigns a real number to every possible outcome of an experiment. 
 
 ## Types of Random Variables
 
