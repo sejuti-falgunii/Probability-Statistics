@@ -776,7 +776,11 @@ The **conditional expectation** of \( X \) given an event \( A \) is:
 \[ E(X | A) = \frac{\sum_{x \in A} x \cdot P(X = x | A)}{\sum_{x \in A} P(X = x | A)} \]
 
 In the example where \( X \) was initially uniformly distributed, if we know \( X \geq 2 \), we conditionally update our PMF so that the probabilities of 2, 3, and 4 are each \( \frac{1}{3} \). The conditional expectation in this case would be 3.
+# Lecture 7
+* The Case of Three random variables
+$P_{x,y,z}(x, y, z)$ 
 
+This shows the probability that X takes the value, Y takes the value,  Z takes the value, simultaneously.
 
 
 
