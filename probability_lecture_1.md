@@ -637,118 +637,71 @@ Why? For each element, we have two choices: include it in a subset or not. So, w
   Similarly, \(\binom{n}{0} = 1\) because there’s exactly one way to choose zero items (the empty set).
 
 # Lecture 5
-
-In probability theory, we often start with the basics—just understanding probabilities and how they work. But if we only focused on probabilities alone, the subject wouldn't be as rich or engaging as it is. What truly adds depth and makes probability theory intriguing is the concept of **random variables**. Random variables allow us to assign numerical values to the outcomes of an experiment, giving us a more tangible way to analyze and understand randomness.
-
 ## Defining Random Variables
+Random variables allow us to assign numerical values to the outcomes of an experiment, giving us a more tangible way to analyze and understand randomness. An experiment where we measure the height of a randomly chosen student from a class,the sample space \( \Omega \), is the set of all students in the class. A RV in this case,\( H \) for height—maps each student (an outcome) to a specific numerical value (their height in inches).
 
-Let's define what we mean by a random variable. Imagine an experiment where we measure the height of a randomly chosen student from a class. Here, the sample space, denoted by \( \Omega \), is the set of all students in the class. A **random variable**—in this case, let's call it \( H \) for height—maps each student (an outcome) to a specific numerical value (their height in inches).
-
-So, mathematically speaking, a random variable is a function that assigns a real number to every possible outcome of an experiment. For example, if you select a random student and measure their height, you might get 60 inches or 71 inches, depending on the student chosen. Each of these numerical outcomes corresponds to a specific value of the random variable \( H \).
+A random variable is a function that assigns a real number to every possible outcome of an experiment. 
 
 ## Types of Random Variables
 
-When we talk about random variables, it's important to note that they can be of different types—discrete or continuous. A **discrete random variable** takes on a finite or countable number of possible values. For example, if we round a student’s height to the nearest inch, the random variable could only take integer values like 60, 61, 62, etc.
-
-On the other hand, a **continuous random variable** can take any value within a certain range. If we measure a student's height with infinite precision, the height could be any real number, making it a continuous random variable.
+A discrete random variable takes on a finite or countable number of possible values. For example, if we round a student’s height to the nearest inch, the random variable could only take integer values like 60, 61, 62, etc.On the other hand, a continuous random variable can take any value within a certain range. If we measure a student's height with infinite precision, the height could be any real number, making it a continuous random variable.
 
 ## Probability Mass Function (PMF)
-
-Now that we understand what a random variable is, let's talk about how to describe them using a **probability mass function (PMF)**. The PMF assigns probabilities to each possible value that a discrete random variable can take. Essentially, it tells us how likely each numerical outcome is.
-
-Consider the example of flipping a coin until you get heads. Here, our random variable \( X \) might represent the number of tosses required to get the first head. If the first toss is a head, \( X = 1 \). If the first toss is a tail and the second is a head, \( X = 2 \), and so on. The PMF of \( X \) would then give the probabilities of these different values of \( X \).
-
+The PMF assigns probabilities to each possible value that a discrete random variable can take; essentially, how likely each numerical outcome is. Example: flipping a coin until we get heads. Here, our random variable \( X \) might represent the number of tosses required to get the first head. If the first toss is a head, \( X = 1 \). If the first toss is a tail and the second is a head, \( X = 2 \). The PMF of \( X \) would then give the probabilities of these different values of \( X \).
 The probability mass function is defined as:
-
 \[
 P_X(k) = P(X = k)
 \]
-
-where \( P_X(k) \) is the probability that the random variable \( X \) takes the value \( k \). The PMF must satisfy two conditions:
-
+ \( P_X(k) \) is the probability that the random variable \( X \) taking the value \( k \). The PMF must satisfy two conditions:
 1. **Non-negativity**: \( P_X(k) \geq 0 \) for all \( k \).
 2. **Normalization**: The sum of all probabilities must equal 1, \( \sum P_X(k) = 1 \).
-
 ## Examples of PMFs
-
-Let's consider an example to understand PMFs better. Suppose you flip a fair coin until you get heads for the first time. The number of tosses required to get the first head can be modeled as a geometric random variable. The PMF of this random variable \( X \), where \( X = k \) represents the event that the first head appears on the \( k \)-th toss, is given by:
-
+We flip a fair coin until you get heads for the first time. If the number of tosses required to get the first head can be modeled as a geometric random variable, the PMF of this random variable \( X \) . Here \( X = k \) represents the event that the first head appears on the \( k \)-th toss, is given by:
 \[
 P_X(k) = (1 - p)^{k-1} p
 \]
+\( p \) is the probability of getting heads on a single toss.
 
-Here, \( p \) is the probability of getting heads on a single toss, and \( (1 - p)^{k-1} \) represents the probability of getting \( k-1 \) tails before the first head.
+\( (1 - p)^{k-1} \) represents the probability of getting \( k-1 \) tails before the first head.
 
-If we were to plot this PMF, we'd notice that each successive bar (representing the probability of each value of \( X \)) gets smaller, creating a characteristic geometric decay. This is why it is called a geometric distribution.
+For plotting this PMF, we'd notice that each successive bar (representing the probability of each value of \( X \)) gets smaller, creating a characteristic geometric decay. That's why it is called a geometric distribution.
 
 ## Random Variables as Functions
 
-An important concept to grasp is that random variables are essentially functions from the sample space to the real numbers. For instance, if \( H \) is the height of a student, it is a function that takes a student (an element of the sample space) and returns their height (a real number).
-
-Moreover, we can have functions of random variables that are also random variables. For example, if we define a new random variable \( H' = H \times 2.54 \), which converts height from inches to centimeters, \( H' \) is a function of \( H \). Since \( H' \) still maps outcomes to real numbers, it is itself a random variable.
+Random variables are essentially functions from the sample space to the real numbers. If \( H \) is the height of a student, it is a function that takes a student (an element of the sample space) and returns their height (a real number). Moreover, we can have functions of random variables that are also random variables. taking anexample, if we define a new random variable \( H' = H \times 2.54 \), which converts height from inches to centimeters, \( H' \) is a function of \( H \). Since \( H' \) still maps outcomes to real numbers, it is itself a random variable.
 
 ## Expected Value and Variance
-
-Two critical concepts related to random variables are the **expected value** and the **variance**. The **expected value** or **mean** of a random variable gives a measure of the "center" or "average" value that the random variable takes on. Mathematically, for a discrete random variable \( X \) with PMF \( P_X(k) \), the expected value \( E(X) \) is:
-
+The expected value or mean of a random variable gives a measure of the "center" or "average" value that the random variable takes on. Discrete random variable \( X \) with PMF \( P_X(k) \), the expected value \( E(X) \):
 \[
 E(X) = \sum_{k} k \cdot P_X(k)
 \]
-
-The **variance** of a random variable, on the other hand, measures the spread or "dispersion" of its possible values. It tells us how much the values of the random variable deviate from the mean. For a discrete random variable \( X \), the variance \( Var(X) \) is defined as:
+The variance of a random variable, on the other hand, measures the spread or "dispersion" of its possible values. It tells us how much the values of the random variable deviate from the mean. For a discrete random variable \( X \), the variance \( Var(X) \) is defined as:
 
 \[
 Var(X) = E[(X - E(X))^2] = \sum_{k} (k - E(X))^2 \cdot P_X(k)
 \]
-
-Sure, let’s break down variance in a more detailed and approachable way!
-
----
-
 ### Understanding Variance
-
-**1. Definition**
-
-Variance is a key statistical concept that measures how much the values of a random variable differ from its average value, or mean. Mathematically, it's defined as:
-
-##
+1. Definition
+Variance is a key statistical concept that measures how much the values of a random variable differ from its average value, or mean.
 \[ \text{Var}(X) = E[(X - E[X])^2] \]
-
-
 Think of variance as a measure of the spread of your data:
-If you have a lot of test scores that are very close to the average score, the variance will be low. This means the scores are consistent and not very spread out.By squaring the differences from the mean, variance gives more weight to larger deviations. So, if some test scores are very high or very low compared to the average, these will contribute more to the variance.
-
+The example says having test scores that are very close to the average score, the variance will be low. Meaning the scores are not very spread out (consistent).By squaring the differences from the mean, variance gives more weight to larger deviations. So, if some test scores are very high or very low compared to the average, these will contribute more to the variance.
 **2,Calculation:**
-
 - **Random Variable Inside**: When you compute \( (X - E[X]) \), this result is still random because \( X \) is random, though \( E[X] \) is a constant.
 - **Squared Deviation**: Squaring \( (X - E[X]) \) gives us a new random variable, which tells us the squared distance of each score from the mean. This random variable helps us understand how spread out the scores are.
-
 * **Why Square the Deviations?**
-
-
-- **Mathematical Simplicity**: Squaring the deviations avoids the issue of positive and negative values canceling each other out. If you didn’t square them, the deviations might sum up to zero even if there is significant spread.
-- **Emphasis on Larger Deviations**: By squaring, larger deviations from the mean have a disproportionately larger impact on the variance. This makes variance a useful measure for understanding how spread out or dispersed the values are.
-
-**3. Alternative Formula:**
-
+* Squaring the deviations avoids the issue of positive and negative values canceling each other out. Without squaring them, the deviations might sum up to zero even if there is significant spread.
+* By squaring, larger deviations from the mean have a disproportionately larger impact on the variance. This makes variance a useful measure for understanding how spread out or dispersed the values are.
 Variance can also be computed using:
 
 \[ \text{Var}(X) = E[X^2] - (E[X])^2 \]
-
 here
-- **\( E[X^2] \)**: This is the expected value of the square of \( X \). It represents the average of the squared values of the random variable.
-- **\( (E[X])^2 \)**: This is the square of the mean of \( X \).
-
+- **\( E[X^2] \)**= This is the expected value of the square of \( X \). It represents the average of the squared values of the random variable.
+- **\( (E[X])^2 \)**= This is the square of the mean of \( X \).
 expanding the squared deviation formula:
-
 \[ E[(X - E[X])^2] = E[X^2] - 2E[X]E[X] + (E[X])^2 \]
-
-
 \[ \text{Var}(X) = E[X^2] - (E[X])^2 \]
-
-**4. Implications of Variance:**
-
-Importance of Variance
+### Importance of Variance
 It provides a measure of how consistent or variable the data is. A high variance indicates a lot of variability, meaning the data points are spread out widely around the mean. A low variance indicates that the data points are clustered closely around the mean. Knowing the variance helps in assessing how predictable the data is. Lower variance means more predictability and stability, whereas higher variance suggests greater uncertainty.
 
 # Lecture 6
@@ -769,35 +722,32 @@ The **expected value** of a random variable is a weighted average of all possibl
 
 \[ E(X) = \sum_{x} x \cdot P(X = x) \]
 
-example: rolling a fair six-sided die. The possible outcomes are 1 through 6. The expected value is:
+example: rolling a fair six-sided dice. The possible outcomes are 1 through 6. The expected value is:
 
 \[ E(X) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = 3.5 \]
 
-rolling the die many times, the average result would be around 3.5.
+if we roll the dice quite a few time, the mean will be near 3.5.
 
 ## Functions of Random Variables
 
-If we have a random variable \( X \) and a function \( g \), then \( g(X) \) is also a random variable. For instance, if \( X \) represents the roll of a die and \( g(X) \) is the square of \( X \), then \( g(X) \) will be the square of the result of the die roll.
+A random variable's \( X \) function \( g(X) \) is also a random variable. \( X \) represents the roll of a die and \( g(X) \) is the square of \( X \), then \( g(X) \) will be the square of the result of the die roll.
 
 \[ E(g(X)) = \sum_{x} g(x) \cdot P(X = x) \]
 
-shortcut:Instead of calculating \( g(X) \)'s PMF from scratch, we can directly use the PMF of \( X \) to compute \( E(g(X)) \).
+shortcut:We can directly use the PMF of \( X \) to compute \( E(g(X)) \).
 
 ## Linearity of Expectation
 
-A key property of expectation is linearity. If \( g \) is a linear function, the expectation behaves nicely:
+If \( g \) is a linear function, the expectation behaves linearity:
 
-\[ E(aX + b) = aE(X) + b \]
+\[ E(aX + b) = aE(X) + b \] in this way
 ## Variance and Standard Deviation
-
-While the expected value gives us a central tendency, it doesn’t tell us how spread out the values are. To measure this spread, we use **variance**. The variance is the average squared distance from the mean:
+While the expected value gives us a central tendency, it doesn’t tell us how spread out the values are. To do this, we use **variance**. The variance is the average squared distance from the mean:
 
 \[ \text{Var}(X) = E[(X - E(X))^2] \]
 
-Variance has units that are the square of the units of \( X \). For example, if \( X \) is measured in meters, the variance is in square meters. To get a more interpretable measure of spread, we use the **standard deviation**, which is the square root of the variance. It’s expressed in the same units as \( X \) and provides a clearer picture of the distribution's spread.
-
+Variance has units that are the square of the units of \( X \).To get a more interpretable measure of spread, we use the standard deviation, which is the square root of the variance. It’s expressed in the same units as \( X \) and provides a clearer picture of the distribution's spread.
 ## Example1
-
 We takea simple experiment where the distnce is 200 miles.we can either fly at 200 miles per hour or walk at 1 mile per hour. We flip a coin to decide which speed you’ll use. Let’s denote the speed by \( V \), and the time by \( T \). 
 
 - With probability \( \frac{1}{2} \), \( V = 200 \) mph, and the time \( T \) is \( \frac{200}{200} = 1 \) hour.
@@ -826,15 +776,9 @@ The **conditional expectation** of \( X \) given an event \( A \) is:
 \[ E(X | A) = \frac{\sum_{x \in A} x \cdot P(X = x | A)}{\sum_{x \in A} P(X = x | A)} \]
 
 In the example where \( X \) was initially uniformly distributed, if we know \( X \geq 2 \), we conditionally update our PMF so that the probabilities of 2, 3, and 4 are each \( \frac{1}{3} \). The conditional expectation in this case would be 3.
+# Lecture 7
+* The Case of Three random variables
+$P_{x,y,z}(x, y, z)$ 
 
-
-
-
-
-
-
-
-
-
-
+This shows the probability that X takes the value, Y takes the value,  Z takes the value, simultaneously.
 
