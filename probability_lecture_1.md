@@ -776,9 +776,67 @@ The **conditional expectation** of \( X \) given an event \( A \) is:
 \[ E(X | A) = \frac{\sum_{x \in A} x \cdot P(X = x | A)}{\sum_{x \in A} P(X = x | A)} \]
 
 In the example where \( X \) was initially uniformly distributed, if we know \( X \geq 2 \), we conditionally update our PMF so that the probabilities of 2, 3, and 4 are each \( \frac{1}{3} \). The conditional expectation in this case would be 3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Lecture 7
-* The Case of Three random variables
-$P_{x,y,z}(x, y, z)$ 
 
-This shows the probability that X takes the value, Y takes the value,  Z takes the value, simultaneously.
+The joint PMF of two random variables gives us the probability of any pair of possible values of those variables occurring simultaneously.
 
+Pₓ(x) = P(X=x) --> marginal  
+Pₓᵧ(x,y) = P(X=x, Y=y) --> joint
+
+* For the conditional PMF (a list of various conditions of conditional probabilities of interest):
+
+Pₓ|ᵧ(x|y) = P(X=x | Y=y) --> conditional
+
+* The probabilities of all x's need to add up to 1. So,
+
+Σₓ Pₓ|ᵧ(x|y) = 1
+
+[Hence, they are essentially like ordinary probabilities over the different x's in a universe where we know the value of y (random variable).]
+
+> Joint to Marginal:
+
+Pₓ(x) = Σᵧ Pₓᵧ(x,y)
+
+> Conditional and Marginal to Joint:
+
+Pₓᵧ(x,y) = Pₓ(x) Pᵧ|ₓ(y|x)
+
+
+
+This resembles:
+
+P(A∩B) = P(A) P(B|A)
+
+Where:
+
+- A = event where X takes value x
+- B = event where Y takes value y
+- Joint probability of A & B happening simultaneously.
