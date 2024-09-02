@@ -844,3 +844,57 @@ Where:
 - A = event where X takes value x
 - B = event where Y takes value y
 - Joint probability of A & B happening simultaneously.
+
+
+**In case of 3 random variables (r.v.)**
+
+Pₓᵧz(x,y,z) = P(x,y,z)
+
+Pₓ(x) = ∑ᵧ,z Pₓᵧz(x,y,z)
+
+[Fixing x and considering all the possible variables for the remaining y & z]
+
+**Independent Random Variables**
+
+Pₓᵧz(x,y,z) = Pₓ(x) Pᵧ|ₓ(y|x) Pz|ₓ,ᵧ(z|x,y)
+
+We know it before like this:
+
+P(A∩B∩C) = P(A) ⋅ P(B|A) ⋅ P(C|A,B)
+
+* Three random variables are independent if and only if their joint probability mass function factors into the product of their individual probability mass functions:
+
+Pₓᵧz(x,y,z) = Pₓ(x) ⋅ Pᵧ(y) ⋅ Pz(z)
+
+* Random variables are independent if and only if knowing the realized values of some of these random variables doesn't change our beliefs about the likelihood of various values for the remaining random variables.
+
+Thus, Pₓ|ᵧ(x|y) = Pₓ(x)
+
+This means we have some original beliefs about how likely it is for X to take on certain values.
+
+Now, if the information comes that Y took on a certain value, it would compel us to revise our beliefs, which is represented by Pₓ|ᵧ(x|y).
+
+
+Independence means that our new revised beliefs will be the same as the original belief.
+
+This conditional is only well-defined if the event that \(Y\) takes on that particular value has a positive probability. (\(Pᵧ(y) > 0\)). Thus, we can't condition on zero probabilities.
+
+→ Similarly, for multiple random variables (r.v.):
+
+Pₓ|ᵧ,z(x|y, z) = Pₓ(x)
+
+**Example 1:**
+
+Two discrete random variables:
+
+|   y\x   | 1/20 | 2/20 | 1/20 |        |
+|:-------:|:----:|:----:|:----:|:------:|
+| **4**   | 2/20 | 2/20 |      | 2/20   |
+| **3**   | 3/20 | 4/20 | 1/20 | 2/20   |
+| **2**   | 1/20 | 2/20 | 1/20 |        |
+| **1**   | 1/20 |      |      |        |
+
+Table: Joint PMF table.
+
+- **Independent?**
+Fixing the value of \(y\) each time changes what we expect or consider possible for the values of the other random variable.
