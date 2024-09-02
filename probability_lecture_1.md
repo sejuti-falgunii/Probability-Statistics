@@ -782,32 +782,6 @@ $P_{x,y,z}(x, y, z)$
 
 This shows the probability that X takes the value, Y takes the value,  Z takes the value, simultaneously.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Lecture 7
 
 The joint PMF of two random variables gives us the probability of any pair of possible values of those variables occurring simultaneously.
@@ -898,3 +872,59 @@ Table: Joint PMF table.
 
 - **Independent?**
 Fixing the value of \(y\) each time changes what we expect or consider possible for the values of the other random variable.
+
+The experiment is such that X≤2X≤2 and YY is larger than or equal to 3 (the upper fourth squares in the graph). This defines a new universe (A). Inside it, we will have a new joint PMF (probability mass function) that is conditioned on the event that this has occurred.
+$P_{X,Y \mid A}$
+|       |       |
+|-------|-------|
+| 1/20  | 2/20  |
+| 2/20  | 4/20  |
+
+here the ratios has to be the same as before and the probability should add uo to 1. 
+|      |      |
+|------|------|
+| 1/9  | 2/9  |
+| 2/9  | 4/9  |
+
+Now, in this new universe is x independent from y
+
+|      |      |
+|------|------|
+| 1/9  | 2/9  |
+
+
+If we say that \( Y \) takes a specific value in this new universe, what information do we get about the value of \( X \)? This will be such that the right-sided value is twice as likely as the left-sided one. The same logic applies to the other half of the table. Hence, the conditional PMF in this new universe (the conditional PMF of \( X \) given \( Y \)) is the same as the marginal PMF of \( X \), but of course, in the new universe. So, no matter what \( Y \) is, the conditional PMF of \( X \) is the same.
+
+The conditional PMF is 
+
+$$ 
+\frac{1}{3} 
+$$ 
+
+and 
+
+$$ 
+\frac{2}{3} 
+$$.
+
+This will be the conditional PMF of \( X \) in the new universe, regardless of the value of \( Y \). Therefore, \( Y \) doesn’t provide any information about \( X \) and doesn’t cause us to change any of our beliefs in this new universe. Thus, the two random variables are independent here.
+
+Another way to verify that we have independence is to find the marginal PMFs of the two variables: is the joint PMF the product of the marginals? If yes, then the two random variables are independent in this universe (conditionally independent).
+
+### Expectations
+
+Expectation is like the average value of a random variable if we conduct an experiment repeatedly and interpret probabilities as frequencies. So, we get \( X \) over and over with a certain frequency \( P(x) \). Each time a particular value \( x \) is realized, if we receive \( x \) dollars, how many dollars would we get on average?
+
+$$ E[X] = \sum_{z} p x (z) $$
+
+This formula calculates the expected value, which represents the average outcome of a random variable. For calculating the expected value of a random variable, you don’t necessarily need to find the probability mass function (PMF) of that variable. Instead, you can work directly with the values x and y.
+
+When performing an experiment multiple times, each outcome can be represented as a pair (x, y). Each time a specific pair (x, y) occurs, you receive a certain amount of dollars. The fraction of times a particular pair (x, y) occurs, multiplied by the amount of dollars you receive, gives you the total amount you earn. The average amount, which is the expected value, reflects this calculation.
+
+However, when discussing functions of random variables, it’s important to note that the expected value of a function of a random variable is not necessarily the same as the function of the expected value. The expected value of a function of a random variable is the average of that function, not the value of the function evaluated at the average.
+
+
+
+
+
+
