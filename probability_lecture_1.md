@@ -919,12 +919,203 @@ $$ E[X] = \sum_{z} p x (z) $$
 
 This formula calculates the expected value, which represents the average outcome of a random variable. For calculating the expected value of a random variable, you don’t necessarily need to find the probability mass function (PMF) of that variable. Instead, you can work directly with the values x and y.
 
-When performing an experiment multiple times, each outcome can be represented as a pair (x, y). Each time a specific pair (x, y) occurs, you receive a certain amount of dollars. The fraction of times a particular pair (x, y) occurs, multiplied by the amount of dollars you receive, gives you the total amount you earn. The average amount, which is the expected value, reflects this calculation.
+When performing an experiment multiple times, each outcome can be represented as a pair (x, y). Each time a specific pair (x, y) occurs, you receive a certain amount of dollars. The fraction of times a particular pair  (x, y) occurs, multiplied by the amount of dollars you receive, gives us the total amount you earn. The average amount, which is the expected value, reflects this calculation.
 
 However, when discussing functions of random variables, it’s important to note that the expected value of a function of a random variable is not necessarily the same as the function of the expected value. The expected value of a function of a random variable is the average of that function, not the value of the function evaluated at the average.
 
 
 
+### If \( X \) & \( Y \) are independent, what does it mean?
+
+\( X \) doesn't convey any information about \( Y \) or vice versa. If that's the case, would \( g(X) \) tell us about \( h(Y) \)? Shouldn't be. Also, a no.
+
+So, if \( X \) & \( Y \) are independent, \( g(X) \) & \( h(Y) \) are also independent.
+
+### Expectation
+
+\[
+E[aX + b] = aE[X] + b \quad \text{(Linearity)}
+\]
+
+\[
+E[X + Y] = E[X] + E[Y]
+\]
+
+For multiple random variables, the expectations still behave linearly.
+
+**If \( X \) & \( Y \) are independent random variables, the product of two random variables has an expectation which is the product of the expectations:**
+
+\[
+E[X \cdot Y] = E[X] \cdot E[Y]
+\]
+
+In case we have independences, factoring out the PMFs:
+
+\[
+E[X \cdot Y] = \sum_{x} \sum_{y} xy P_{X}(x) P_{Y}(y)
+\]
+
+---
+
+### Variance \( (\text{Var}) \)
+
+\[
+\text{Var}(X) = E[(X - E[X])^2]
+\]
+
+The random variable we are looking at minus the expected value of the random variable we're looking at. This is the difference of the random variable from its mean. Meaning it's the whole expression's expectation. Variance provides the idea of how spread out the distribution is.
+
+The variance doesn't always behave linearly. If we take the constants with the variable, it just shifts the variance. The variance of the sum of independent random variables is the sum of the variances.
+
+Therefore, we can apply the rule that in independent random variables, expectations multiply the right way!
+
+---
+
+### Example 1: The Binomial Distribution
+
+Which counts the number of successes in \( n \) independent trials of a coin. It’s a biased coin having the probability of head (success) \( = p \) at each trial.
+
+---
+
+### How to calculate the expected value of the random variable
+
+- **The probability of success \( p \)**
+
+- The expected value of \( X_i \) is: \( E[X_i] = np \)
+
+\[
+\text{Var}(X_i) = np(1-p)
+\]
+
+\[
+\text{Var}(X) = np(1-p)
+\]
+
+- A lot of problems in probability theory get easier by breaking up the random variable of interest into a sum of simpler & more manageable random variables that take values 0 or 1.
+
+\[
+E[X] = \sum_{k=0}^{n} k \cdot p(k) = np
+\]
+
+- If we plot the variance of X as a function of p then,
+
+[Graph of variance against p with a parabolic shape]
+
+[it’s 0 when p = 1 & 0, & it’s quadratic, so this will be the shape]
+
+### The Hat Problem
+
+n people threw their hats in a box and then pick one at random.
+
+- X: number of people who get their own hat
+
+- Find E[X]
+
+Here, the "random" means any permutation of the hats is equally likely. So there’s complete symmetry between hats & people.
+
+So, the total number of hats picked
+
+X = X₁ + X₂ + X₃ + X₄ + ... + Xn
+
+[X₁: if person 1 got their hat back, X₁ will be 1]
+
+What's the probability that X₁ = 1?
+
+By symmetry, n is the no. of hats, the chance is that they end up getting their own hat as opposed to any other (n - 1) hats is 1/n = P(X₁ = 1)
+
+What's the expected value of X₁?
+
+E[X₁] = 1 × 1/n + 0 × (1 - 1/n) = 1/n
+- Are the X₁ independent? No
+
+- The expected value of ∑X? 
+
+Expectations are linear; expectation of a sum is the sum of expectation—it's always true.
+
+E[X] = ∑E[X₁] = n × 1/n = 1
+
+Only one will end up with their own hat.
+
+As the X₁'s aren't independent, the variance of the sum isn't the same as the sum of the variance.
+
+The general formula for the variance:
+
+Var(X) = E[X]² - E[X²] = E[X]² - 1
+
+X₁² = (∑ X₁)² = ΣX₁² + Σ (X₁Xj) for i ≠ j
+
+E[X₁²] = E[X₁] = 1/n
+
+- X₁X₂ = 1; what does this mean?
+
+This means that they both are 1. (Since they can only be 0 or 1)
+
+P(X₁X₂ = 1) = P(X₁ = 1) . P(X₂ = 1 | X₁ = 1) 
+              = (1/n) . (1/(n-1))
+              = E[X₁Xj] for i ≠ j
+
+**Random Variable:**
+
+Random variable is a function from the sample space to the real numbers, that is, you give me an outcome and based on that outcome I can tell you the value of that variable. So the value of the variable is a function of the outcome that we have.
+
+Given the random variable, some of the outcomes are more likely than others, we want to say which ones are likely and how likely they are. (Probability of the different outcomes)
+
+- **Uppercase** → RV
+- **Lowercase** → real numbers
+
+The random variable \(X\) happens to take the numerical value \(x\). The probability of that is \(P(X = x) = P_x(x)\).
+
+**Expected value of a RV:**
+
+\[
+E[X] = \sum x P_x(x)
+\]
+
+\[
+E[g(x)] = \sum g(x) P_x(x)
+\]
+
+Here, \(E[g(x)] \neq g(E[X])\) → generally it's not true. It means, we can't reason on average. But there are some exceptions like linearity:
+
+\[
+E[aX + b] = aE[X] + b
+\]
+
+Here, \(a\) & \(b\) are some constants.
+E[X_1+X_2] = E[X_1] + E[X_2] \quad \text{if (X_1) \& (X_2) are independent)} 
 
 
+The expectation is linear, but it's not true for Variance:
 
+\[
+Var[aX + b] = a^2 \cdot Var[X]
+\]
+
+---
+
+**Side Notes:**
+
+\[
+E[Var[X]] = E\left[(X - E[X])^2\right] = E\left[X^2 - 2X E[X] + (E[X])^2\right]
+\]
+\[
+= E[X^2] - 2E[X]E[X] + (E[X])^2 
+\]
+\[
+= E[X^2] - (E[X])^2
+\]
+
+---
+
+**Example:**
+
+\[
+E[X] = 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{2} = \frac{3}{2}
+\]
+
+\[
+Var[X] = \left(1 - \frac{3}{2}\right)^2 \cdot \frac{1}{2} + \left(2 - \frac{3}{2}\right)^2 \cdot \frac{1}{2} 
+\]
+\[
+= \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}
+\]
