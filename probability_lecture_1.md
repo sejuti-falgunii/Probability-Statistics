@@ -1599,6 +1599,6 @@ f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
 
 Thus, the PDF of \( T \) for values within the allowed range \( \left[ \frac{200}{60}, \frac{200}{30} \right] \) is:
 
-\[
+$$
 f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
-\]
+$$
