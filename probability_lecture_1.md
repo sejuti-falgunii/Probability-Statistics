@@ -1119,3 +1119,486 @@ Var[X] = \left(1 - \frac{3}{2}\right)^2 \cdot \frac{1}{2} + \left(2 - \frac{3}{2
 \[
 = \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}
 \]
+# Lecture 8
+### Continuous Random Variables and Probability Density Functions
+
+A continuous random variable can take any real number within a given range, unlike discrete variables that take values from a specific set. The outcome of an experiment determines the value of the random variable, which is a function on the sample space. Once a sample point is determined, the corresponding value of the random variable becomes fixed.
+
+To describe the distribution of a continuous random variable, we are interested in determining the likelihood of the variable taking values within specific intervals, such as between \(a\) and \(b\). One way to compute the probability of this event is by finding all outcomes leading to values in this interval and calculating the corresponding probability. However, we simplify this process by focusing on the distribution of values directly on the real number line.
+
+For discrete random variables, the **Probability Mass Function (PMF)** assigns probability masses to specific points. In contrast, for continuous random variables, probability is not concentrated at individual points but distributed over the real line. This distribution is described by the **Probability Density Function (PDF)**. A PDF represents how probability is spread along the real line.
+
+In terms of visualization, the probability that a continuous random variable falls within a specific interval is represented by the area under the PDF curve over that interval. Mathematically, this area is calculated using an integral of the PDF. The PDF defines the overall shape and spread of the probability distribution along the real line.
+
+For continuous random variables, the probability of the variable taking any exact value is zero, as the area under a single point on the PDF curve is zero. The PDF at a particular value reflects how probability is distributed around that value, not the probability of the value itself.
+
+A PDF must satisfy the following conditions:
+
+1. It must be non-negative since probabilities cannot be negative.
+2. The integral of the PDF over the entire real line must equal 1, ensuring that the total probability is 1.
+
+The PDF can also be interpreted as a probability per unit length. For small intervals, the probability of the variable falling within that interval is approximately the product of the length of the interval and the value of the PDF. This gives the PDF the interpretation of a "density" of probability, indicating how much probability is concentrated in small segments of the real line. Densities are not limited to values less than or equal to 1; they can take any non-negative value.
+
+---
+
+### Expectation and Variance
+
+The **expectation (or expected value)** of a continuous random variable is calculated similarly to that of a discrete variable. It represents the center of gravity of the distribution described by the PDF. The expectation is computed by integrating the product of the variable’s value and the PDF over the entire range of possible values.
+
+The **variance** and **standard deviation** of a continuous random variable measure the spread of the distribution around the mean (the expectation). Variance is the average squared deviation from the mean, and the standard deviation provides a sense of the spread in the same units as the variable.
+
+---
+
+### Uniform Distribution: An Example
+
+A simple example of a continuous random variable is the **uniform distribution**, where the PDF is constant over a given interval \([a, b]\) and zero elsewhere. All values within the interval are equally likely. The probability of any individual value remains zero, but the probability of an interval is proportional to its length.
+
+To ensure that the total probability sums to 1, the height of the PDF is set to:
+
+\[
+\frac{1}{b - a}
+\]
+
+The expectation of a uniform random variable is the midpoint of the interval, and the variance is:
+
+\[
+\frac{(b - a)^2}{12}
+\]
+
+In conclusion, continuous random variables are characterized by the spread of probability across a continuum, and probabilities are calculated using the area under the PDF curve. Properties such as expectation and variance are determined using integrals rather than sums, with the uniform distribution providing a straightforward case.
+In probability theory, probability distributions are categorized into two major types: discrete and continuous.
+
+A discrete probability distribution describes situations where the outcomes take on distinct values. The probability mass function (PMF), p(x)p(x), represents the likelihood of each discrete outcome occurring. A classic example is the binomial distribution, where a finite number of Bernoulli trials are conducted, and the outcomes can be heads or tails. The sum of all probabilities must equal 1:
+∑x∈Sp(x)=1
+x∈S∑​p(x)=1
+
+A continuous probability distribution applies when the outcomes form a continuum of values. The probability density function (PDF), f(x)f(x), is used to describe the distribution over a continuous range. For continuous distributions, the probability of any single point is 0, but the area under the curve of the PDF over an interval gives the probability of the outcome falling within that range:
+∫−∞∞f(x) dx=1
+∫−∞∞​f(x)dx=1
+
+For example, in the normal distribution, the probabilities are associated with intervals rather than exact values.
+
+Mathematical expectation, or the expected value, of a random variable XX gives the mean of the probability distribution. For a discrete distribution, it is given by:
+E(X)=∑xx⋅p(x)
+E(X)=x∑​x⋅p(x)
+
+For a continuous distribution, the expected value is computed as:
+E(X)=∫−∞∞x⋅f(x) dx
+E(X)=∫−∞∞​x⋅f(x)dx
+
+The variance measures the spread of a distribution, indicating how much the values of a random variable deviate from the expected value. For a discrete distribution, the variance is:
+Var(X)=E[(X−μ)2]=∑x(x−μ)2⋅p(x)
+Var(X)=E[(X−μ)2]=x∑​(x−μ)2⋅p(x)
+
+And for a continuous distribution:
+Var(X)=∫−∞∞(x−μ)2⋅f(x) dx
+Var(X)=∫−∞∞​(x−μ)2⋅f(x)dx
+
+Where μ=E(X)μ=E(X) is the mean.
+
+The central limit theorem states that the distribution of the sample mean of a large number of independent, identically distributed variables approaches a normal distribution, regardless of the shape of the original distribution. This theorem is fundamental in statistics, enabling approximations and inferences for a wide variety of practical problems.
+In probability theory, the concept of standard deviations plays a critical role in understanding the distribution of random variables. Suppose XX has a mean of 2 and a variance of 16, which gives a standard deviation of 4. The goal is to calculate the probability of a particular event involving XX.
+
+Consider the event X<3X<3. This can be rewritten in terms of the standardized variable:
+X−2<3−2
+X−2<3−2
+
+This simplifies to:
+X−24<3−24
+4X−2​<43−2​
+
+This is the standardized (or normalized) version of XX, which we now know follows a standard normal distribution, N(0,1)N(0,1). The question now becomes finding the probability that the standard normal variable is less than 0.250.25.
+
+Using the standard normal table, we find:
+P(Z<0.25)=0.5987
+P(Z<0.25)=0.5987
+
+This is a fundamental technique when calculating probabilities involving normal distributions. It's necessary to understand how to use the standard normal table and transform a general normal variable into a standard normal form.
+# Lecture 9
+### Lecture Notes on Continuous Random Variables and Joint Densities
+
+In this lecture, we extended our discussion from discrete random variables to continuous random variables. Our goal is to understand their properties, how to calculate probabilities, expectations, and define concepts such as joint and conditional densities. 
+
+### Transitioning from Discrete to Continuous Random Variables
+
+We previously covered concepts such as the probability mass function (PMF) and expectation for discrete random variables. For continuous random variables, we replace these with the probability density function (PDF) and integrals. The key difference is that, for continuous variables, we use integrals instead of sums when calculating probabilities and expectations.
+
+The cumulative distribution function or (CDF) remains applicable for both discrete and continuous cases. It provides a complete description of the probability distribution for any random variable, regardless of whether it's discrete or continuous.
+
+When calculating the expected value, in the continuous case, we replace sums with integrals. Similarly, the probability mass function is replaced with the density function. Thus, the general formulas for expectations remain structurally the same but adapt to continuous variables by switching from sums to integrals.
+
+## Joint Density Function for Continuous Random Variables
+
+For two continuous random variables, we introduce the joint density function. This function allows us to compute probabilities for regions of the two-dimensional plane. Given a set \( S \), the probability that the random variables \( (X, Y) \) fall inside \( S \) is determined by integrating the joint density function over that region:
+
+\[
+P((X, Y) \in S) = \int_S f_{X, Y}(x, y) \, dx \, dy
+\]
+
+Here, \( f_{X,Y}(x,y) \) represents the joint density function. It is important to note that this joint density function must satisfy two properties: 
+
+1. The joint density must be non-negative: \( f_{X, Y}(x, y) \geq 0 \).
+2. The total probability over the entire space must sum to 1: 
+
+\[
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx \, dy = 1
+\]
+
+These properties ensure that the joint density function accurately describes the probabilities of events involving two random variables.
+
+### Intuition of the Joint Density Function
+
+We can think of the joint density function as describing the likelihood of different regions in the plane. A higher value of \( f_{X,Y}(x,y) \) in a specific region indicates that the corresponding values of \( X \) and \( Y \) are more likely to occur. For small regions, we approximate the probability of falling into a small rectangle around \( (x, y) \) as:
+
+\[
+P((X, Y) \in [x, x+\Delta x] \times [y, y+\Delta y]) \approx f_{X, Y}(x, y) \cdot \Delta x \cdot \Delta y
+\]
+
+This tells us that the joint density function is essentially the probability per unit area around a particular point.
+
+### Expected Values for Joint Densities
+
+Once we have the joint density function, we can calculate the expected value of a function of two random variables. Suppose we have a function \( g(X, Y) \), then the expected value of \( g(X, Y) \) is given by:
+
+\[
+E[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f_{X, Y}(x, y) \, dx \, dy
+\]
+
+This formula mirrors the one for the discrete case but replaces sums with integrals and probability mass functions with the joint density function.
+
+### Marginal Density Functions
+
+Given the joint density function \( f_{X, Y}(x, y) \), we can derive the marginal density for each random variable individually. The marginal density of \( X \) is obtained by integrating out \( Y \):
+
+\[
+f_X(x) = \int_{-\infty}^{\infty} f_{X, Y}(x, y) \, dy
+\]
+
+This process of integrating out one of the variables gives us the marginal probability distribution of the remaining variable.
+
+### Independence of Continuous Random Variables
+
+Two continuous random variables \( X \) and \( Y \) are said to be independent if their joint density function factorizes into the product of their marginal densities:
+
+\[
+f_{X, Y}(x, y) = f_X(x) \cdot f_Y(y)
+\]
+
+This definition mirrors the one for discrete random variables. Intuitively, independence means that knowing the value of one variable tells you nothing about the other. Additionally, for independent variables, the probability of events involving both variables can be computed by multiplying their individual probabilities.
+
+##### Example: Buffon’s Needle Problem
+
+Buffon's Needle, first posed by the French naturalist Buffon. The problem is to calculate the probability that a randomly thrown needle lands such that it intersects one of several parallel lines drawn on a plane.
+
+if the lines are spaced a distance \( d \) apart, and the needle is thrown completely at random. The exact meaning of "completely at random" must be defined rigorously using the joint density function of the position and orientation of the needle. The Buffon needle problem provides a classical example of using probability and joint densities in geometric contexts.
+
+
+approach to solve this problem:
+
+1. **Set up the sample space**: Describe the possible outcomes using appropriate variables.
+2. **Describe a probability law**: Model the behavior of the needle using probabilistic laws.
+3. **Identify the event of interest**: Specify the condition under which the needle intersects a line.
+4. **Calculate the probability**: Derive the desired probability using integration.
+
+
+
+#### Step 1: Defining the Sample Space
+
+We need variables to describe the needle's position and orientation. Let \( x \) be the vertical distance from the center of the needle to the nearest line, and \( \theta \) the acute angle formed by the needle with the lines. 
+
+- \( x \) can take values between \( 0 \) and \( d/2 \) because the center of the needle can be at most halfway between the two lines.
+- \( \theta \) is measured between \( 0 \) and \( \pi/2 \) (since we are considering the acute angle).
+
+Thus, the sample space consists of all possible pairs of \( x \) and \( \theta \).
+
+#### Step 2: Modeling the Probability Law
+
+To model the behavior of the needle, we assume it falls completely at random, with no preference for any particular position or orientation. This leads us to adopt the following assumptions:
+
+- \( x \) follows a **uniform distribution** over \( [0, d/2] \).
+- \( \theta \) also follows a **uniform distribution** over \( [0, \pi/2] \).
+- \( x \) and \( \theta \) are **independent** of each other.
+
+These assumptions allow us to express the joint density function for \( (x, \theta) \) as the product of the individual densities for \( x \) and \( \theta \). The density of \( x \) is \( \frac{2}{d} \), and the density of \( \theta \) is \( \frac{2}{\pi} \). Hence, the joint density is:
+
+\[
+f(x, \theta) = \frac{4}{\pi d}
+\]
+
+#### Step 3: Identifying the Event of Interest
+
+The needle intersects a line if the perpendicular distance from its center to the nearest line is less than half the vertical projection of the needle. Specifically, let the perpendicular projection of the needle's length onto the vertical axis be \( \frac{l}{2} \sin(\theta) \). The condition for intersection is:
+
+\[
+x \leq \frac{l}{2} \sin(\theta)
+\]
+
+Thus, the event of interest is described by the inequality \( x \leq \frac{l}{2} \sin(\theta) \).
+
+#### Step 4: Calculating the Probability
+
+To find the probability that the needle intersects a line, we integrate the joint density over the region where \( x \leq \frac{l}{2} \sin(\theta) \). This gives the following double integral:
+
+\[
+P(\text{intersect}) = \int_0^{\pi/2} \int_0^{\frac{l}{2} \sin(\theta)} \frac{4}{\pi d} \, dx \, d\theta
+\]
+
+Evaluating the inner integral with respect to \( x \) yields:
+
+\[
+\int_0^{\frac{l}{2} \sin(\theta)} \frac{4}{\pi d} \, dx = \frac{4l}{\pi d} \sin(\theta)
+\]
+
+Next, we integrate with respect to \( \theta \):
+
+\[
+\int_0^{\pi/2} \frac{4l}{\pi d} \sin(\theta) \, d\theta
+\]
+
+The integral of \( \sin(\theta) \) over \( [0, \pi/2] \) is 1, so the result simplifies to:
+
+\[
+P(\text{intersect}) = \frac{2l}{\pi d}
+\]
+
+Thus, the probability that the needle intersects one of the lines is \( \frac{2l}{\pi d} \).
+
+##### Experimental Estimation of Pi
+
+This formula suggests an interesting method to experimentally estimate the value of \( \pi \). By conducting repeated trials of throwing needles onto the lines and recording the proportion of times the needle intersects a line, one can estimate \( \pi \). Specifically, solving for \( \pi \) gives:
+
+\[
+\pi = \frac{2l}{Pd}
+\]
+
+Where \( P \) is the experimentally observed probability of intersection.
+
+#### Estimating π Using Monte Carlo Method
+
+In this lecture, we examine the Monte Carlo method to estimate the value of π. To do this, we perform a random experiment where needles are thrown at a grid of parallel lines, and we calculate the probability of the needles intersecting a line.
+
+#### Probability of Intersection
+Given the setup, after a few throws, we estimate that the probability of a needle intersecting a line is approximately 1/2. Consequently, using the Buffon's needle experiment, we estimate the value of π to be 2. Though the estimate is rough, it introduces a foundational idea for Monte Carlo methods.
+
+#### Monte Carlo Methods in Science
+The Monte Carlo method is a popular approach in science, especially when evaluating integrals in higher dimensions, where analytical solutions are difficult or impossible. Instead of direct computation, we generate random samples to simulate the solution. This methodology is used extensively by physicists, statisticians, and computer scientists for approximating complex integrals.
+
+### Conditional Densities and Subtleties in Continuous Variables
+
+#### Defining Conditional Densities
+For continuous random variables, defining conditional densities requires understanding the density of a variable given that another variable has a specific value. The conditional density of a random variable \( X \) given \( Y \) should provide the probability of small intervals, with the knowledge of \( Y = y \).
+
+However, conditioning on an exact value in the continuous case introduces subtleties since the event \( Y = y \) has zero probability. Instead, we condition on the event that \( Y \) is infinitesimally close to \( y \).
+
+#### Conditional Density Formula
+To maintain the correct relationship, the conditional density is given by the formula:
+\[
+f_{X|Y}(x|y) \approx \frac{f_{X,Y}(x, y)}{f_Y(y)}
+\]
+Here, \( f_{X,Y} \) is the joint density, and \( f_Y(y) \) is the marginal density. This is analogous to how we handle conditional probability in the discrete case, replacing probability mass functions (PMFs) with probability density functions (PDFs).
+
+### Joint Densities and Slicing
+
+#### Slicing the Joint Density
+We interpret the conditional density as a "slice" of the joint density. By fixing a value of \( y \), we can observe how the joint density varies with \( x \). The conditional PDF is essentially a scaled version of the joint density after fixing \( y \), normalized so that the total area under the slice sums to 1.
+
+#### Independence in Densities
+For independent random variables \( X \) and \( Y \), the joint density factorizes:
+\[
+f_{X,Y}(x,y) = f_X(x) \cdot f_Y(y)
+\]
+In this case, the conditional PDF simplifies to the marginal PDF, reinforcing the idea that independence means knowing \( Y \) does not affect our knowledge of \( X \).
+
+### Example: Breaking a Stick Twice
+
+We are given a stick of length \( l \), and we break it at a random point \( X \). The break occurs uniformly over the interval \( [0, l] \). After breaking the stick at \( X \), we break the remaining piece again at a random point \( Y \), uniformly distributed over \( [0, X] \).
+
+#### Joint Density
+The joint density \( f_{X,Y}(x, y) \) is found by multiplying the marginal density of \( X \) by the conditional density of \( Y \) given \( X \):
+\[
+f_{X,Y}(x, y) = \frac{1}{l} \cdot \frac{1}{x}, \quad \text{for } 0 \leq y \leq x \leq l
+\]
+This density is zero elsewhere. The joint PDF exhibits a "sail" shape, which increases as \( x \) decreases, and diverges as \( x \to 0 \).
+
+#### Conditional Expectation of \( Y \) Given \( X \)
+The conditional expectation of \( Y \) given \( X = x \) is:
+\[
+E[Y|X=x] = \int_0^x y \cdot \frac{1}{x} \, dy = \frac{x}{2}
+\]
+This result aligns with intuition since \( Y \) is uniformly distributed over \( [0, x] \), and its expected value is the midpoint \( \frac{x}{2} \).
+
+#### Marginal Distribution of \( Y \)
+
+To find the marginal distribution of \( Y \), we integrate out \( X \) from the joint density:
+\[
+f_Y(y) = \int_y^l \frac{1}{l} \cdot \frac{1}{x} \, dx
+\]
+This integral gives:
+\[
+f_Y(y) = \frac{1}{l} \ln \left(\frac{l}{y}\right), \quad 0 \leq y \leq l
+\]
+This logarithmic shape reflects the higher likelihood of smaller values of \( y \), as the density increases when \( y \to 0 \).
+
+#### Expected Value of \( Y \)
+
+Finally, the expected value of \( Y \) is calculated using the marginal density:
+\[
+E[Y] = \int_0^l y \cdot \frac{1}{l}
+
+# Lecture 10
+#### Derived Distributions and Bayesian Inference
+
+#### Overview
+
+This lecture discusses derived distributions, focusing on the process of deriving the distribution for a function of a known random variable. The topic builds on prior concepts in probability theory and Bayesian inference, connecting discrete and continuous random variables and their respective probability mass functions (PMFs) and probability density functions (PDFs).
+
+1. **Conditional probabilities**: Defined for both PMFs and PDFs, and linked by the general multiplication rule:  
+   \[
+   P(X, Y) = P(X) \cdot P(Y | X)
+   \]
+   This is valid for both discrete and continuous random variables, with sums replaced by integrals in the continuous case.
+   
+2. **Joint and marginal distributions**: These distributions explain the probability of combinations of values for two or more random variables and how those probabilities marginalize over one variable.
+
+#### Inference Problems and Bayesian Rule
+
+Probability allows us to infer unknown values based on observed measurements. In Bayesian inference, we update our belief about a random variable \( X \) given an observed random variable \( Y \).
+
+Given the prior distribution of \( X \) and a model for \( Y \) given \( X \), the posterior distribution of \( X \) given \( Y \) is obtained using **Bayes' Rule**:
+
+\[
+P(X | Y) = \frac{P(X) \cdot P(Y | X)}{P(Y)}
+\]
+
+For continuous variables, this expression translates to:
+
+\[
+f_{X | Y}(x | y) = \frac{f_X(x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
+\]
+
+#### Discrete and Continuous Random Variables
+
+#### The Discrete Case
+
+In the discrete case, \( X \) and \( Y \) are both discrete random variables. The inference problem is to compute the posterior distribution \( P(X | Y) \) from the joint distribution \( P(X, Y) \). The Bayesian update gives the probability of \( X \) based on observed \( Y \), and is proportional to the joint probability.
+
+For example, if \( X \) is binary (0 or 1), and \( Y \) represents a discrete measurement (e.g., a radar signal), we can infer the probability of a plane being present given that the radar signal beeped.
+
+#### The Continuous Case
+
+In the continuous case, we consider random variables \( X \) and \( Y \) as continuous. The inference process remains similar, except that we work with PDFs instead of PMFs. The posterior distribution is:
+
+\[
+f_{X | Y}(x | y) = \frac{f_X(x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
+\]
+
+An application of this might be estimating a continuous signal \( X \), such as current through a resistor, based on a noisy measurement \( Y \).
+
+#### Mixed Discrete-Continuous Case
+
+It is possible to have a mixed situation where one variable is discrete (e.g., a bit of information, \( X \)) and another is continuous (e.g., noisy signal \( Y \)). In this scenario:
+
+- \( X \) is described by a PMF.
+- \( Y \) is described by a conditional PDF.
+
+Inference follows the same Bayesian rule, but with a mix of PMF and PDF. The formula is:
+
+\[
+P(X = x | Y = y) = \frac{P(X = x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
+\]
+
+#### Example: Noisy Bit Communication
+
+Consider sending a bit \( X \) (either 0 or 1) with noise affecting the received signal \( Y \). The received signal \( Y \) follows a normal distribution centered around the transmitted bit value with some variance (Gaussian noise). In this scenario, the posterior distribution of \( X \) is proportional to the likelihood of receiving \( Y \) given \( X \).
+
+#### Derived Distributions
+
+A **derived distribution** is the distribution of a function of a random variable. If \( X \) is a random variable with known distribution, and \( Z = g(X) \) is a function of \( X \), we are interested in finding the distribution of \( Z \).
+
+#### Steps to Derive the Distribution
+
+1. **One-to-one functions**: If \( g \) is a one-to-one function, the distribution of \( Z \) can be derived from \( X \)'s distribution using a change of variables. For continuous variables, this involves finding the Jacobian of the transformation.
+
+2. **Many-to-one functions**: If \( g \) maps multiple values of \( X \) to the same value of \( Z \), you must account for all possible pre-images of \( Z \) when deriving the distribution.
+
+Example: Sum of Random Variables
+
+If \( Z = X + Y \), where \( X \) and \( Y \) are independent random variables with known distributions, the PDF of \( Z \) is the **convolution** of the PDFs of \( X \) and \( Y \).
+
+\[
+f_Z(z) = \int_{-\infty}^{\infty} f_X(x) \cdot f_Y(z - x) \, dx
+\]
+
+This formula extends to more complex functions of multiple variables.
+
+#### Probability and Random Variables
+
+##### Problem
+
+Given a random variable \( V \) that follows a uniform distribution between 0 and 30, we are tasked with finding the probability of an event involving another random variable \( T \), which is related to \( V \). Specifically, we need to calculate the probability that \( V \) is greater than a certain function of \( T \), and we must then find the density of \( T \).
+
+Deriving the Range for \( T \)
+
+The probability event in question involves determining when \( 200/T \) falls within a specific range, namely between 30 and 60. This condition gives us the following inequality:
+
+\[
+\frac{200}{T} \geq 30 \quad \text{and} \quad \frac{200}{T} \leq 60
+\]
+
+To solve this inequality for \( T \), we rearrange each part:
+
+\[
+T \leq \frac{200}{30} \quad \text{and} \quad T \geq \frac{200}{60}
+\]
+
+Thus, \( T \) must lie within the interval:
+
+\[
+\frac{200}{60} \leq T \leq \frac{200}{30}
+\]
+
+For \( T \) values within this range, \( \frac{200}{T} \) satisfies the condition, and we can proceed to find the probability that \( V \) is greater than \( \frac{200}{T} \).
+
+#### Probability of \( V > \frac{200}{T} \)
+
+Since \( V \) follows a uniform distribution between 0 and 30, the probability that \( V \) is greater than \( \frac{200}{T} \) corresponds to the area under the probability density function (PDF) from \( \frac{200}{T} \) to 30. The PDF of \( V \) is \( f_V(v) = \frac{1}{30} \) for \( 0 \leq v \leq 30 \).
+
+The probability can be calculated as:
+
+\[
+P(V > \frac{200}{T}) = \int_{\frac{200}{T}}^{30} \frac{1}{30} \, dv
+\]
+
+Evaluating this integral gives:
+
+\[
+P(V > \frac{200}{T}) = \frac{30 - \frac{200}{T}}{30}
+\]
+
+This formula is valid for \( T \) values within the range derived earlier.
+
+#### Finding the Density of \( T \)
+
+To find the probability density function (PDF) of \( T \), we take the derivative of the cumulative distribution function (CDF) of \( T \) with respect to \( T \). The CDF is given by:
+
+\[
+F_T(t) = P(T \leq t) = P(V > \frac{200}{t})
+\]
+
+The corresponding PDF is the derivative of the CDF:
+
+\[
+f_T(t) = \frac{d}{dt} \left( \frac{30 - \frac{200}{t}}{30} \right)
+\]
+
+Applying the chain rule, we obtain:
+
+\[
+f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
+\]
+
+Thus, the PDF of \( T \) for values within the allowed range \( \left[ \frac{200}{60}, \frac{200}{30} \right] \) is:
+
+\[
+f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
+\]
