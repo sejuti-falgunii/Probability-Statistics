@@ -1,4 +1,14 @@
 # Lecture 1
+Lecture Outline
+- Probability as a mathematical framework for reasoning about uncertainty
+- Probabilistic models
+sample space, probability law
+- Axioms of probability
+- Simple examples
+- What does it take to set up a probabilistic model
+- What are the basic rules for dealing with the basi probabilistic models
+
+
 Probability is a mathematical framework for dealing with uncertainty (randomness). 
 ### What is Sample Space?
 ---
@@ -9,6 +19,10 @@ The set of all possible outcomes in an experiment.
   >**Collectively Exhaustive:** The set includes all possible outcomes (at least one outcome must occur). 
 
 * There can be numerous details in practical scenarios, what we consider relevant depends on our judgment, making it an art.
+![alt text](image.png)
+This sample space is finite.
+![alt text](image-1.png)
+This sampe space is infinite.
 ### When to choose sequential description?
 ---
 Sequential Description is useful when the experiment has multiple stages (A tree-based).
@@ -1602,3 +1616,22 @@ Thus, the PDF of \( T \) for values within the allowed range \( \left[ \frac{200
 $$
 f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
 $$
+
+# The Monty Hall problem
+Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+![alt text](image-2.png)
+
+# The Double Roll of a Dice
+
+![alt text](image-3.png)
+![alt text](image-5.png)
+
+# The Random Walker problem
+
+Consider a random walker on a square lattice. At each step the random walker moves to a nearest neighbor site with equal probability for each of the four sites. The walker starts at the origin and takes 3 steps.
+
+1. Whts the probability that after 2 steps the walker ends up in the starting point?
+![alt text](image-6.png)
+2. Whats the probability to end up in one step forward than the origin?
+![alt text](image-7.png)
+# The chess tournament problem
