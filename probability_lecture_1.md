@@ -1621,10 +1621,16 @@ $$
 Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 ![alt text](image-2.png)
 
+1. the first option of choosing the door 1, where the prize is behind the door 1, here, staying does go along the winning bait. This happens 3 times where staying wins. Which is a fraction of 1/3!
+2. The next case, switching wins. Because, given if the chosen door doesn't hold the prize, the other two must. In the next step the host does point at a non-prize holding door means the remaining door must hold the prize. 6 times out of 9 switching became a winning bait. Which is a fraction of 2/3!
 # The Double Roll of a Dice
 
 ![alt text](image-3.png)
 ![alt text](image-5.png)
+The double role of a dice, gives us two independent events who make up one sample space. They are independent hence we may take them as two dimensions and represent as a 6*6 matrix. 
+1. What's the probability of doubles as outcomes?
+given there will be 6 times the case that each number appears twice in the final outcome sequesnce, the answer will be 6/36 or 1/6!
+2. 
 
 # The Random Walker problem
 
