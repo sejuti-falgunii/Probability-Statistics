@@ -1640,4 +1640,55 @@ Consider a random walker on a square lattice. At each step the random walker mov
 ![alt text](image-6.png)
 2. Whats the probability to end up in one step forward than the origin?
 ![alt text](image-7.png)
-# The chess tournament problem
+# Probability of the Difference Between Two Events: A Proof Using Axioms
+
+## Introduction
+Let's prove a fundamental probability theorem using the basic axioms of probability. We'll show how to calculate the probability of the difference between two events using set theory.
+
+## Problem Statement
+Given two events A and B, we want to prove:
+P(A△B) = P(A) + P(B) - 2P(A∩B)
+
+*Note: A△B represents the symmetric difference of sets A and B*
+
+## Simplified Notation
+To make this proof more manageable, let's define three disjoint sets:
+- C = A ∩ B̄ (points in A but not in B)
+- D = Ā ∩ B (points in B but not in A)
+- E = A ∩ B (points in both A and B)
+
+Using this notation, our goal becomes:
+P(C ∪ D) = P(A) + P(B) - 2P(E)
+
+## Probability Axioms
+1. **Non-negativity**: For any event A, P(A) ≥ 0
+2. **Normalization**: P(Ω) = 1 (where Ω is the sample space)
+3. **Additivity**: For disjoint events A and B (A ∩ B = ∅), P(A ∪ B) = P(A) + P(B)
+
+## Proof
+
+1. First, since C and D are disjoint:
+P(C ∪ D) = P(C) + P(D)    [by additivity]
+
+2. Observe that:
+- A = C ∪ E (disjoint union)
+- Therefore: P(A) = P(C) + P(E)    [by additivity]
+
+3. Similarly:
+- B = D ∪ E (disjoint union)
+- Therefore: P(B) = P(D) + P(E)    [by additivity]
+
+4. Now we can construct our final proof:
+
+P(C ∪ D) = P(C) + P(D)                   [from step 1]
+
+= [P(C) + P(E)] + [P(D) + P(E)] - 2P(E)
+
+= P(A) + P(B) - 2P(E)          [from steps 2 and 3]
+## Verification
+This makes intuitive sense because:
+- We add P(A) to include all elements in A
+- We add P(B) to include all elements in B
+- We subtract 2P(E) because the intersection E was counted twice
+
+This completes our proof that P(A△B) = P(A) + P(B) - 2P(A∩B).
